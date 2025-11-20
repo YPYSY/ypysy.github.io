@@ -256,10 +256,10 @@
             text-align: center;
         }
         
-        /* 新增：多影片容器樣式 */
+        /* 多影片容器樣式 */
         .video-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* 在大螢幕上並排 */
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin: 30px 0;
         }
@@ -287,7 +287,7 @@
 
         .demo-video-container {
             width: 100%;
-            padding-top: 56.25%; /* 16:9 比例容器 */
+            padding-top: 56.25%;
             position: relative;
             border-radius: 15px;
             overflow: hidden;
@@ -317,6 +317,48 @@
             border-radius: 4px;
             color: var(--accent-blue);
             font-family: 'Courier New', monospace;
+        }
+
+        /* Product Section */
+        .product-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(0, 224, 255, 0.05);
+            border: 1px solid rgba(0, 224, 255, 0.2);
+            border-radius: 15px;
+        }
+
+        .product-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .product-desc {
+            font-size: 1rem;
+            color: rgba(240, 240, 240, 0.8);
+            margin-bottom: 25px;
+        }
+
+        .product-button {
+            padding: 12px 40px;
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+            color: var(--bg-color);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.4);
         }
 
         /* Contact Container */
@@ -425,6 +467,7 @@
             margin-top: 60px;
             display: flex;
             gap: 35px;
+            justify-content: center;
             animation: fadeIn 4.5s ease-in-out;
         }
 
@@ -564,10 +607,6 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
-            .demo-video-container {
-                height: 0; /* 讓 padding-top 控制高度 */
-            }
 
             .hero {
                 margin-top: 80px;
@@ -606,6 +645,15 @@
                 margin-top: 30px;
                 padding: 10px 30px;
                 font-size: 0.9rem;
+            }
+
+            .product-section {
+                margin-top: 40px;
+                padding: 30px;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
             }
         }
 
@@ -652,19 +700,18 @@
             我們專注於創新與卓越，透過深思熟慮的策略和強大的執行力，<br>
             幫助團隊實現最大的成功潛能。
         </p>
-        <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView()">
+        <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
             立即聯絡我們
         </button>
-        </p>
-        </p>
+        
         <div class="product-section">
             <h3 class="product-title">🚀 立即試用產品</h3>
             <p class="product-desc">
                 體驗我們的移工稅務 AI 系統，簡化您的稅務管理流程
             </p>
-            <button class="https://migrant-tax-ai.vercel.app/" target="_blank" class="product-button">
+            <a href="https://migrant-tax-ai.vercel.app/" target="_blank" class="product-button">
                 前往應用
-            </button>
+            </a>
         </div>
     </section>
 
