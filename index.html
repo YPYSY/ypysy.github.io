@@ -255,6 +255,28 @@
         .demo-content {
             text-align: center;
         }
+        
+        /* 新增：多影片容器樣式 */
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 在大螢幕上並排 */
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .video-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .video-box h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
 
         .demo-intro {
             font-size: 1.2rem;
@@ -264,7 +286,9 @@
         }
 
         .demo-video-container {
-            margin: 30px 0;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 比例容器 */
+            position: relative;
             border-radius: 15px;
             overflow: hidden;
             border: 1px solid rgba(0, 224, 255, 0.2);
@@ -272,6 +296,11 @@
         }
 
         .demo-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: none;
         }
 
@@ -498,10 +527,11 @@
         @media (max-width: 768px) {
             nav {
                 padding: 15px 20px;
-            }    .nav-links {
-            gap: 15px;
-            font-size: 0.85rem;
-        }
+            }    
+            .nav-links {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
 
             .about-content {
                 grid-template-columns: 1fr;
@@ -528,13 +558,15 @@
             .member-avatar {
                 font-size: 2.5rem;
             }
-
-            .demo-video-container {
-                height: auto;
+            
+            /* RWD 影片區塊：堆疊顯示 */
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-
-            .demo-video-container iframe {
-                height: 400px;
+            
+            .demo-video-container {
+                height: 0; /* 讓 padding-top 控制高度 */
             }
 
             .hero {
@@ -704,20 +736,40 @@
         <div class="section-container">
             <h2 class="section-title">See It In Action</h2>
             <div class="demo-content">
-                <p class="demo-intro">體驗我們的 AI 稅務系統如何為您服務</p>
-                <div class="demo-video-container">
-                    <iframe 
-                        width="100%" 
-                        height="600" 
-                        src="https://www.youtube.com/embed/NEPlS9XSuhE" 
-                        title="YPYSY 移工稅務 AI 系統演示" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                <p class="demo-intro">透過影片快速了解我們的產品概念與實際操作流程。</p>
+                
+                <div class="video-grid">
+                    
+                    <div class="video-box">
+                        <h3>專案介紹 (Project Intro)</h3>
+                        <div class="demo-video-container">
+                            <iframe 
+                                title="YPYSY 移工稅務 AI 系統 - 專案介紹" 
+                                src="https://www.youtube.com/embed/NEPlS9XSuhE" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="video-box">
+                        <h3>Demo 測試 (System Demo)</h3>
+                        <div class="demo-video-container">
+                            <iframe 
+                                title="YPYSY 移工稅務 AI 系統 - Demo 測試" 
+                                src="https://www.youtube.com/embed/UC3D31GL7UI" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
                 </div>
+                
                 <p class="demo-note">
-                    請確認您已將 YouTube 影片的嵌入連結（在 URL 中 <code>/embed/</code> 之後的部分）替換為您的實際影片 ID。
+                    這兩個影片已成功嵌入。請確保您設定的 YouTube 影片權限是公開或不公開（Unlisted），才能在網頁上播放。
                 </p>
             </div>
         </div>
