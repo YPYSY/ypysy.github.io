@@ -219,9 +219,20 @@
             box-shadow: 0 20px 40px rgba(0, 224, 255, 0.1);
         }
 
-        .member-avatar {
-            font-size: 3rem;
+        /* 團隊成員圖片樣式 */
+        .team-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(0, 224, 255, 0.3);
+            transition: transform 0.3s;
             margin-bottom: 15px;
+        }
+
+        .team-member:hover .team-img {
+            transform: scale(1.05);
+            border-color: var(--accent-blue);
         }
 
         .member-name {
@@ -244,6 +255,17 @@
             color: rgba(240, 240, 240, 0.65);
             line-height: 1.6;
             margin: 0;
+        }
+
+        .member-desc a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .member-desc a:hover {
+            color: var(--accent-green);
+            text-decoration: underline;
         }
 
         /* Demo Section */
@@ -566,6 +588,19 @@
             }
         }
 
+        /* Flex utility classes */
+        .flex {
+            display: flex;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             nav {
@@ -598,8 +633,9 @@
                 padding: 20px 15px;
             }
 
-            .member-avatar {
-                font-size: 2.5rem;
+            .team-img {
+                width: 120px;
+                height: 120px;
             }
             
             /* RWD 影片區塊：堆疊顯示 */
@@ -794,41 +830,41 @@
             <h2 class="section-title">Our Team</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="mb-4 flex justify-center">
-                    <img src="mascot.jpg" alt="member1.jpg" class="team-img">
-                </div>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://via.placeholder.com/140x140?text=Yong-Bing+Deng" alt="Yong-Bing Deng, CEO" class="team-img">
+                    </div>
                     <h4 class="member-name">Yong-Bing Deng</h4>
                     <p class="member-role">CEO</p>
                     <p class="member-desc"><a href="https://youngbeingdeng.github.io/" target="_blank" rel="noopener noreferrer">https://youngbeingdeng.github.io/</a></p>
                 </div>
                 <div class="team-member">
-                    <div class="mb-4 flex justify-center">
-                    <img src="mascot.jpg" alt="member2.jpg" class="team-img">
-                </div>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://via.placeholder.com/140x140?text=Pin-Wen+Huang" alt="Pin-Wen Huang, CMO" class="team-img">
+                    </div>
                     <h4 class="member-name">Pin-Wen Huang</h4>
                     <p class="member-role">CMO</p>
                     <p class="member-desc"><a href="https://pinwaynehuang.github.io/" target="_blank" rel="noopener noreferrer">https://pinwaynehuang.github.io/</a></p>
                 </div>
                 <div class="team-member">
-                    <div class="mb-4 flex justify-center">
-                    <img src="mascot.jpg" alt="member3.png" class="team-img">
-                </div>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://via.placeholder.com/140x140?text=Syue-Min+Liu" alt="Syue-Min Liu, CHO" class="team-img">
+                    </div>
                     <h4 class="member-name">Syue-Min Liu</h4>
                     <p class="member-role">CHO</p>
                     <p class="member-desc"><a href="https://liusyuemin.github.io/" target="_blank" rel="noopener noreferrer">https://liusyuemin.github.io/</a></p>
                 </div>
                 <div class="team-member">
-                    <div class="mb-4 flex justify-center">
-                    <img src="mascot.jpg" alt="member4.png" class="team-img">
-                </div>
-                    <h4 class="member-name">Ya-Chieh Wang,</h4>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://via.placeholder.com/140x140?text=Ya-Chieh+Wang" alt="Ya-Chieh Wang, CTO" class="team-img">
+                    </div>
+                    <h4 class="member-name">Ya-Chieh Wang</h4>
                     <p class="member-role">CTO</p>
                     <p class="member-desc"><a href="https://heyajiw.github.io/" target="_blank" rel="noopener noreferrer">https://heyajiw.github.io/</a></p>
                 </div>
                 <div class="team-member">
-                    <div class="mb-4 flex justify-center">
-                    <img src="mascot.jpg" alt="member5.jpg" class="team-img">
-                </div>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://via.placeholder.com/140x140?text=Yi-Jing+Hong" alt="Yi-Jing Hong, COO" class="team-img">
+                    </div>
                     <h4 class="member-name">Yi-Jing Hong</h4>
                     <p class="member-role">COO</p>
                     <p class="member-desc"><a href="https://hiyyijing.github.io/" target="_blank" rel="noopener noreferrer">https://hiyyijing.github.io/</a></p>
